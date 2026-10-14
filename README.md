@@ -1,45 +1,86 @@
-# GPPM PAAG/CSM — geriatric pneumonia detection: multi-seed ablation
+# GPPM: PAAG/CSM Geriatric Pneumonia Ablation
 
-Code, derived data and results for the manuscript *"Attention and Comorbidity-Suppression Modules for Geriatric Pneumonia Detection on Chest Radiographs: A Multi-Seed Ablation Study of DenseNet-121"* (Wekesa et al., submitted to PeerJ).
+Code, data-split manifests, and results for a factorial ablation study of two architectural additions to
+a DenseNet-121 chest-radiograph classifier — a Pathology-Aware Attention Gate (PAAG) and a Comorbidity
+Suppressor Module (CSM) — evaluated on a geriatric (ages 65–106) cohort pooled from CheXpert and
+NIH ChestX-ray8/ChestX-ray14.
 
-- Software archive (this repository): DOI `10.5281/zenodo.22945068`
-- Trained model weights (12 checkpoints): DOI `10.5281/zenodo.22945940`
+The accompanying manuscript, *"Attention and Comorbidity-Suppression Modules for Geriatric Pneumonia
+Detection on Chest Radiographs: A Multi-Seed Ablation Study of DenseNet-121,"* is currently under review
+at *PeerJ*. See [`CITATION.cff`](CITATION.cff).
+
+## Headline finding
+
+All four architectural variants (base, +PAAG, +CSM, +PAAG+CSM) were trained from **5 independent random
+seeds** (42, 101, 2024, 7, 2025). Point estimates from a single seed can look like a clear win for PAAG
+and/or CSM; pooling across seeds with a DerSimonian–Laird random-effects model (HKSJ-adjusted) does not
+establish a robust discriminative benefit for either module. See `analysis/cross_seed_analysis.py` and
+`analysis/cross_seed_synthesis.csv` for the seed-by-seed numbers and the pooled estimate.
 
 ## Repository layout
-| Path | Contents |
-|---|---|
-| `data_preparation/PatientLevelDataSplit_LeakProof.ipynb` | Builds the cohort: age ≥ 65, frontal views, label mapping by priority, patient-level 60/20/20 split (random_state = 42) |
-| `data_preparation/<renaming script>` | Step that produced the final `CheXpert_<patient>_<age>_<sex>_<view>_…` filenames |
-| `data/label_mapping.csv` | Source label → study group mapping and priority order |
-| `data/split_assignments.csv` | One row per image: filename, split, group, patient ID, age, sex, view (no images) |
-| `data/cohort_description.csv` | Table 1 counts |
-| `notebooks/GPPM_PAAG_CSM_v2_multiseed.ipynb` | Training, evaluation, Grad-CAM/IoU, multi-seed runs |
-| `analysis/cross_seed_analysis.py` | Per-seed DeLong, random-effects synthesis (Table 8), validation-threshold and Platt-recalibration analyses, IoU Wilcoxon tests |
-| `results/` | Metrics (JSON/CSV), per-image test predictions (`predictions.npz`), IoU CSVs and figures for every variant and seed |
 
-## Data access
-The images are **not** redistributed. Obtain them from the providers and accept their terms:
-- CheXpert v1.0 and VisualCheXbert labels (`train_visualCheXbert.csv`): https://stanfordmlgroup.github.io/competitions/chexpert/
-- NIH ChestX-ray8/14 (`Data_Entry_2017_v2020.csv`): https://nihcc.app.box.com/v/ChestXray-NIHCC
+```
+data/                    Patient-level split assignments, cohort description, label mapping
+results/                 Metrics, figures, and statistical-comparison tables for every variant/seed
+                         (model checkpoints are NOT included here — see "Trained weights" below)
+analysis/                Standalone scripts for the cross-seed statistical synthesis
+notebooks/               The Jupyter notebooks used for training, evaluation, and this repo's analysis
+data_preparation/        Scripts/notes for building the geriatric cohort from the source datasets
+requirements.txt         Pinned package versions from the environment this was run in
+```
 
-## Reproducing the paper
-1. `pip install -r requirements.txt` (Python 3.x, PyTorch + torchvision, scikit-learn, scipy, opencv-python, pandas, numpy, matplotlib, seaborn).
-2. Edit the paths at the top of `PatientLevelDataSplit_LeakProof.ipynb`, run it, then run the renaming step to create `Training/`, `Validation/`, `Testing/` group folders.
-3. In the training notebook set `BASE_DIR`, then for each variant (`base`, `paag`, `csm`, `paag_csm`): mode `train` (seed 42), `train_multiseed` (seeds 101 and 2024), `test`; finally `compare_variants`. Each run took about 6 hours on one GPU.
-4. `python analysis/cross_seed_analysis.py results/` reproduces Table 8 and the recalibration/threshold results from the saved predictions, without retraining.
+## Model variants
 
-| Manuscript item | Source file |
-|---|---|
-| Table 1 | `data/cohort_description.csv` |
-| Tables 2–3, Figures 5–7 | `results/VariantComparison/` |
-| Tables 4–5, Figures 8–12 | `results/TestViz/<variant>/` (test sample), `results/BestModel/<variant>/LocalizationIoU/` (validation replication sample) |
-| Table 6 | `results/TestViz/<variant>/*_subgroup_analysis.csv`, `final_test_metrics.json` |
-| Tables 7–8 | `results/BestModel/<variant>/seed_*/test_rescored/` + `analysis/cross_seed_analysis.py` |
+| Key | PAAG | CSM | Description |
+|---|---|---|---|
+| `base` | off | off | DenseNet-121, no additions |
+| `paag` | on | off | + Pathology-Aware Attention Gate |
+| `csm` | off | on | + Comorbidity Suppressor Module |
+| `paag_csm` | on | on | Full model |
 
-## Using the trained weights
-Download from the weights DOI. Each file is `<variant>_seed<seed>.pth`; load with
-`model = build_model_variant(variant, 6, comorbidity_classes, pneumonia_idx, True); model.load_state_dict(torch.load(path))`.
-SHA-256 checksums are listed in the weights record.
+## Data
 
-## Licence
-Code: MIT. Model weights and derived tables: CC BY 4.0. Use of the underlying images remains subject to the CheXpert and NIH terms.
+This repository does **not** redistribute patient images. It uses two public, de-identified datasets:
+
+- **CheXpert** (Stanford ML Group) — https://stanfordmlgroup.github.io/competitions/chexpert/
+- **ChestX-ray8 / ChestX-ray14** (NIH Clinical Center) — https://nihcc.app.box.com/v/ChestXray-NIHCC
+
+`data/split_assignments.csv` records, for every image used in this study, which split (train/validation/test)
+it was assigned to, its diagnostic group, source dataset, and basic demographics — so results here can be
+reproduced exactly against your own copy of the two source datasets. `data/label_mapping.csv` documents how
+each dataset's folder-level label maps to this study's six diagnostic groups and the binary pneumonia target.
+
+## Reproducing
+
+1. Obtain CheXpert and ChestX-ray8/14 directly from their providers (registration required) and arrange
+   images into the folder structure expected by `notebooks/` (see `data_preparation/`).
+2. `pip install -r requirements.txt`
+3. Run the training notebook. Each (architecture variant × seed) is one independent training run; this
+   project was developed on Paperspace/Gradient free-tier GPUs, which cap sessions at 6 hours, so the
+   notebook trains and caches one (variant, seed) combination at a time and is safe to stop and resume
+   across sessions.
+4. Run the analysis notebook (or `analysis/cross_seed_analysis.py` directly against a `results/` folder)
+   to reproduce the statistical tables.
+
+## Trained weights
+
+The 20 trained checkpoints (4 variants × 5 seeds) are hosted separately on Zenodo rather than in this
+repository: **[INSERT ZENODO DOI]**. See that archive's own README for loading instructions, input
+preprocessing, and calibration caveats.
+
+## Citing this work
+
+See [`CITATION.cff`](CITATION.cff). Please cite the manuscript once it has a DOI; until then, cite the
+software repository itself via its own `CITATION.cff` entry.
+
+## License
+
+- **Code** in this repository: MIT License (see [`LICENSE`](LICENSE)).
+- **Trained weights** (Zenodo archive): CC BY 4.0.
+- **Data**: not redistributed here; CheXpert and ChestX-ray8/14 remain subject to their original
+  providers' data use agreements.
+
+## Contact
+
+Isaac Wafula Wekesa, School of Computing and Information Technology, Jomo Kenyatta University of
+Agriculture and Technology (JKUAT), Nairobi, Kenya.

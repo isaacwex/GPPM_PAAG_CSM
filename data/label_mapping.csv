@@ -1,8 +1,7 @@
-priority,study_group,training_folder,chexpert_visualchexbert_labels,chestxray8_labels
-1,Pneumonia (Infectious),Pneumonia_Infectious,Pneumonia,Pneumonia
-2,Cardiomegaly,Cardiomegaly,Cardiomegaly,Cardiomegaly
-3,Pleural/Extrapulmonary/Volume Disease,Pleural_Extrapulmonary_Volume_Disease,Atelectasis; Pneumothorax; Pleural Effusion; Pleural Other,Atelectasis; Effusion; Hernia; Pleural_Thickening; Pneumothorax
-4,Airspace Opacity (non-infectious) = Weakly-Supervised Uncertain,Weakly_Supervised_Uncertain,Edema,Consolidation; Edema; Infiltration
-5,Focal Lesion/Chronic Change,Focal_Lesion_Chronic_Change,(none),Emphysema; Fibrosis; Mass; Nodule
-6,No Finding,No_Finding,No Finding,No Finding
-excluded,not used (image dropped if it has only these),-,Lung Opacity; Consolidation; Lung Lesion; Enlarged Cardiomediastinum; Fracture; Support Devices,(none)
+folder_name,label_used_in_paper,pneumonia_binary,description
+Cardiomegaly,Cardiomegaly,0,Comorbidity group - cardiac enlargement visible on the radiograph
+Focal_Lesion_Chronic_Change,Focal Lesion / Chronic Change,0,Comorbidity group - focal pulmonary lesion or chronic structural change
+No_Finding,No Finding,0,No radiographic abnormality reported
+Pleural_Extrapulmonary_Volume_Disease,Pleural / Extrapulmonary Volume Disease,0,Comorbidity group - pleural effusion or other extrapulmonary volume finding
+Weakly_Supervised_Uncertain,Weakly-Supervised Uncertain,0,Ambiguous or uncertain label per the source dataset's own labeling scheme; treated as non-pneumonia for the binary target, retained as a separate diagnostic group for the comorbidity-suppressor loss
+Pneumonia_Infectious,Pneumonia (Infectious),1,Primary target class - infectious pneumonia, binary positive label
