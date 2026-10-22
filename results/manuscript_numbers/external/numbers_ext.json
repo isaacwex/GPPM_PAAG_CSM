@@ -1,0 +1,45 @@
+{
+ "n": 12038,
+ "pos": 418,
+ "patients": 10852,
+ "prev": 0.03472337597607576,
+ "age_median": 75.0,
+ "age_iqr": [
+  69.0,
+  80.0
+ ],
+ "male_pct": 49.60126266821731,
+ "pa_pct": 89.01810932048512,
+ "pos_pa": 337,
+ "n_pa": 10716,
+ "n_cardiomegaly": 2020,
+ "n_cardiomegaly_pos": 85,
+ "n_pleural": 3143,
+ "n_pleural_pos": 177,
+ "n_heart_insufficiency": 319,
+ "n_heart_insufficiency_pos": 40,
+ "n_focal": 591,
+ "n_focal_pos": 34,
+ "n_normal": 2083,
+ "n_normal_pos": 0,
+ "n_nocom": 7082,
+ "n_nocom_pos": 168,
+ "n_amb": 816,
+ "brier_reference": 0.03351766313689985,
+ "spearman_int_ext": [
+  0.3943975621190811,
+  0.00029461603685019817
+ ],
+ "pearson_int_ext": [
+  0.426755711270076,
+  7.897713335019464e-05
+ ],
+ "ensemble_auc": {
+  "base": 0.7670692338732922,
+  "paag": 0.7669247049716296,
+  "csm": 0.7677202315756533,
+  "paag_csm": 0.7655308863615775
+ },
+ "ensemble_all": 0.7672965271887275,
+ "patient_boot_se_single": 0.0129436052032112
+}

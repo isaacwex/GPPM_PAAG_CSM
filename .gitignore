@@ -1,1 +1,22 @@
+# data and labels are never committed (dataset licences)
+data/*
+!data/README.md
 *.pth
+*.pt
+*.npz
+*.zip
+*.dcm
+cohort_from_folders.csv
+cohort_v2_manifest.csv
+padchest_external_manifest.csv
+train_visualCheXbert.csv
+train_cheXbert.csv
+Data_Entry_2017*.csv
+PADCHEST_*.csv*
+# generated
+analysis/out/
+analysis/out_ext/
+analysis/fig/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store

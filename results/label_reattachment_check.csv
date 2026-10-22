@@ -1,0 +1,97 @@
+config,variant,seed,labels,rebuild_from_official_csvs
+a9642dff9011,base,101,reproduced,verified
+a9642dff9011,base,2024,reproduced,verified
+a9642dff9011,base,2025,reproduced,verified
+a9642dff9011,base,273483,reproduced,verified
+a9642dff9011,base,275624,reproduced,verified
+a9642dff9011,base,357596,reproduced,verified
+a9642dff9011,base,396172,reproduced,verified
+a9642dff9011,base,42,reproduced,verified
+a9642dff9011,base,473203,reproduced,verified
+a9642dff9011,base,506424,reproduced,verified
+a9642dff9011,base,523244,reproduced,verified
+a9642dff9011,base,539810,reproduced,verified
+a9642dff9011,base,571470,reproduced,verified
+a9642dff9011,base,58801,reproduced,verified
+a9642dff9011,base,7,reproduced,verified
+a9642dff9011,base,726284,reproduced,verified
+a9642dff9011,base,799671,reproduced,verified
+a9642dff9011,base,806816,reproduced,verified
+a9642dff9011,base,875620,reproduced,verified
+a9642dff9011,base,940962,reproduced,verified
+a9642dff9011,paag,101,reproduced,verified
+a9642dff9011,paag,2024,reproduced,verified
+a9642dff9011,paag,2025,reproduced,verified
+a9642dff9011,paag,273483,reproduced,verified
+a9642dff9011,paag,275624,reproduced,verified
+a9642dff9011,paag,357596,reproduced,verified
+a9642dff9011,paag,396172,reproduced,verified
+a9642dff9011,paag,42,reproduced,verified
+a9642dff9011,paag,473203,reproduced,verified
+a9642dff9011,paag,506424,reproduced,verified
+a9642dff9011,paag,523244,reproduced,verified
+a9642dff9011,paag,539810,reproduced,verified
+a9642dff9011,paag,571470,reproduced,verified
+a9642dff9011,paag,58801,reproduced,verified
+a9642dff9011,paag,7,reproduced,verified
+a9642dff9011,paag,726284,reproduced,verified
+a9642dff9011,paag,799671,reproduced,verified
+a9642dff9011,paag,806816,reproduced,verified
+a9642dff9011,paag,875620,reproduced,verified
+a9642dff9011,paag,940962,reproduced,verified
+a9642dff9011,csm,101,reproduced,verified
+a9642dff9011,csm,2024,reproduced,verified
+a9642dff9011,csm,2025,reproduced,verified
+a9642dff9011,csm,273483,reproduced,verified
+a9642dff9011,csm,275624,reproduced,verified
+a9642dff9011,csm,357596,reproduced,verified
+a9642dff9011,csm,396172,reproduced,verified
+a9642dff9011,csm,42,reproduced,verified
+a9642dff9011,csm,473203,reproduced,verified
+a9642dff9011,csm,506424,reproduced,verified
+a9642dff9011,csm,523244,reproduced,verified
+a9642dff9011,csm,539810,reproduced,verified
+a9642dff9011,csm,571470,reproduced,verified
+a9642dff9011,csm,58801,reproduced,verified
+a9642dff9011,csm,7,reproduced,verified
+a9642dff9011,csm,726284,reproduced,verified
+a9642dff9011,csm,799671,reproduced,verified
+a9642dff9011,csm,806816,reproduced,verified
+a9642dff9011,csm,875620,reproduced,verified
+a9642dff9011,csm,940962,reproduced,verified
+a9642dff9011,paag_csm,101,reproduced,verified
+a9642dff9011,paag_csm,2024,reproduced,verified
+a9642dff9011,paag_csm,2025,reproduced,verified
+a9642dff9011,paag_csm,273483,reproduced,verified
+a9642dff9011,paag_csm,275624,reproduced,verified
+a9642dff9011,paag_csm,357596,reproduced,verified
+a9642dff9011,paag_csm,396172,reproduced,verified
+a9642dff9011,paag_csm,42,reproduced,verified
+a9642dff9011,paag_csm,473203,reproduced,verified
+a9642dff9011,paag_csm,506424,reproduced,verified
+a9642dff9011,paag_csm,523244,reproduced,verified
+a9642dff9011,paag_csm,539810,reproduced,verified
+a9642dff9011,paag_csm,571470,reproduced,verified
+a9642dff9011,paag_csm,58801,reproduced,verified
+a9642dff9011,paag_csm,7,reproduced,verified
+a9642dff9011,paag_csm,726284,reproduced,verified
+a9642dff9011,paag_csm,799671,reproduced,verified
+a9642dff9011,paag_csm,806816,reproduced,verified
+a9642dff9011,paag_csm,875620,reproduced,verified
+a9642dff9011,paag_csm,940962,reproduced,verified
+b6253a0a3fe1,base,101,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,base,2024,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,base,42,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,base,7,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,paag,101,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,paag,2024,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,paag,42,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,paag,7,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,csm,101,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,csm,2024,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,csm,42,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,csm,7,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,paag_csm,101,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,paag_csm,2024,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,paag_csm,42,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified
+b6253a0a3fe1,paag_csm,7,not reproducible: val: image order in the rebuilt cohort differs from the predictions file,verified

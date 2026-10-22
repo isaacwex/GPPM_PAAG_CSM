@@ -1,17 +1,25 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite the associated article and this software."
-title: "GPPM PAAG/CSM: multi-seed ablation of attention and comorbidity-suppression modules for geriatric pneumonia detection"
+message: "If you use this code or these results, please cite the article and this repository."
+title: "GPPM_PAAG_CSM: attention gating and comorbidity suppression for pneumonia detection on geriatric chest radiographs"
+version: 1.0.0
+date-released: 2026-10-22
+license: MIT
+repository-code: "https://github.com/isaacwex/GPPM_PAAG_CSM"
 authors:
   - family-names: Wekesa
     given-names: Isaac Wafula
     affiliation: "Jomo Kenyatta University of Agriculture and Technology"
   - family-names: Wekesa
     given-names: Jael Sanyanda
+    affiliation: "Jomo Kenyatta University of Agriculture and Technology"
   - family-names: Gateri
     given-names: Judy Muthoni
+    affiliation: "Jomo Kenyatta University of Agriculture and Technology"
   - family-names: Opondo
     given-names: Philemon Onyango
-repository-code: "https://github.com/isaacwex/GPPM_PAAG_CSM_v2"
-license: MIT
-version: "1.0.0"
-doi: "10.5281/zenodo.XXXXXXX"   # replace with the Zenodo software DOI
+    affiliation: "Jomo Kenyatta University of Agriculture and Technology"
+keywords: [chest radiography, pneumonia, geriatrics, attention, ablation, reproducibility, DenseNet-121]
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22945940
+    description: "Model weights and label-free predictions (Zenodo)"

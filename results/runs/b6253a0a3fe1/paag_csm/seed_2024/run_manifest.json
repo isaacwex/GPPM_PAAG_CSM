@@ -1,0 +1,70 @@
+{
+  "variant": "paag_csm",
+  "seed": 2024,
+  "status": "complete",
+  "config_hash": "b6253a0a3fe1",
+  "config": {
+    "protocol": "P2-spatialPAAG-boundedCSM",
+    "img_size": 320,
+    "cache_short_side": 366,
+    "clahe_clip": 2.0,
+    "clahe_grid": 8,
+    "aug_scale": [
+      0.75,
+      1.0
+    ],
+    "aug_ratio": [
+      0.9,
+      1.1
+    ],
+    "aug_degrees": 7.0,
+    "aug_translate": 0.04,
+    "aug_brightness": 0.1,
+    "aug_contrast": 0.1,
+    "aug_hflip": false,
+    "comorbidity_labels": "partial",
+    "use_multilabel_csv": true,
+    "paag_hidden": 256,
+    "paag_init_bias": -3.0,
+    "csm_hidden": 32,
+    "csm_init_bias": -3.0,
+    "csm_detach": true,
+    "epochs": 20,
+    "warmup_epochs": 1,
+    "patience": 6,
+    "batch_size": 48,
+    "lr": 0.0003,
+    "backbone_lr_mult": 0.1,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "ema_decay": 0.999,
+    "min_lr_frac": 0.01,
+    "imbalance": "pos_weight",
+    "max_pos_weight": 20.0,
+    "lambda_com": 1.0,
+    "checkpoint_metric": "val_auc_ema",
+    "seed_pool_size": 40,
+    "n_target_seeds": 20,
+    "primary_contrasts": [
+      [
+        "paag",
+        "base"
+      ],
+      [
+        "csm",
+        "base"
+      ],
+      [
+        "paag_csm",
+        "base"
+      ]
+    ],
+    "fpr_spec_target": 0.8
+  },
+  "stage": "confirm",
+  "time": "2026-10-16 09:52:17",
+  "torch": "2.1.1+cu121",
+  "torchvision": "0.16.1+cu121",
+  "cuda": "12.1",
+  "gpu": "NVIDIA RTX A6000"
+}
