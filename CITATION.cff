@@ -21,5 +21,8 @@ authors:
 keywords: [chest radiography, pneumonia, geriatrics, attention, ablation, reproducibility, DenseNet-121]
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.22945940
-    description: "Model weights and label-free predictions (Zenodo)"
+    value: 10.5281/zenodo.23590668
+    description: "Model weights and label-free predictions, Protocol 2 (Zenodo)"
+  - type: doi
+    value: 10.5281/zenodo.23598061
+    description: "Model weights of the exploratory Protocol 1 study, 5 seeds (Zenodo)"

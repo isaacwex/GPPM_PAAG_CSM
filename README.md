@@ -33,8 +33,8 @@ All module-versus-Base differences lie within ±0.01 AUC (equivalence tests in t
 | `analysis/` | `analysis.py` (internal), `ext_analysis.py` (PadChest), `figures.py`, `paths.py` (input locations and label re-attachment). |
 | `figures/` | Figures 1–6 and S1–S3 as submitted. |
 
-Stored on **Zenodo** (too large for GitHub, or derived from the training data):
-model weights of the 80 confirmatory models (`best_ema.pth`), label-free validation and test predictions of every run, and the PadChest scores of the 80 models (`external_padchest_all.npz`). DOI: see *Citation* below.
+Stored on **Zenodo**, record [10.5281/zenodo.23590668](https://doi.org/10.5281/zenodo.23590668) (too large for GitHub, or derived from the training data):
+model weights of the 80 confirmatory models (`best_ema.pth`, in 16 zips of 5 seeds: `GPPM_PAAG_CSM_checkpoints_<variant>_part<k>of4.zip`), label-free validation and test predictions of every run, and the PadChest scores of the 80 models (`external_padchest_all.npz`). DOI: see *Citation* below.
 
 ## Data and licences
 
@@ -64,7 +64,11 @@ Open `notebooks/GPPM_PAAG_CSM_v10_Protocol2.ipynb` on a CUDA machine (we used an
 
 ## Citation
 
-See `CITATION.cff`. Weights and predictions: Zenodo, https://doi.org/10.5281/zenodo.22945940 (new version for this release).
+See `CITATION.cff`.
+
+- Weights and label-free predictions (Protocol 2): https://doi.org/10.5281/zenodo.23590668
+- Code and results (this repository, archived at each release): https://doi.org/10.5281/zenodo.22945068
+- Weights of the exploratory Protocol 1 study (5 seeds): https://doi.org/10.5281/zenodo.23598061
 
 ## Licence
 

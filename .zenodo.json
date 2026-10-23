@@ -1,0 +1,49 @@
+{
+  "upload_type": "software",
+  "title": "GPPM_PAAG_CSM: code and results of the pre-specified 20-seed PAAG/CSM ablation for pneumonia detection on geriatric chest radiographs",
+  "description": "Code, frozen configuration, run records of all 109 runs, results of the 80 confirmatory models, localisation, external PadChest evaluation, Protocol 1 summary results and the analysis that produces every number in the article <em>Attention gating and comorbidity suppression do not improve pneumonia detection on geriatric chest radiographs: a pre-specified 20-seed ablation of DenseNet-121 with an analysis of training length</em> (submitted to PeerJ Computer Science). Model weights and label-free predictions: <a href=\"https://doi.org/10.5281/zenodo.23590668\">doi:10.5281/zenodo.23590668</a>. No images or labels are included.",
+  "creators": [
+    {
+      "name": "Wekesa, Isaac Wafula",
+      "affiliation": "Jomo Kenyatta University of Agriculture and Technology"
+    },
+    {
+      "name": "Wekesa, Jael Sanyanda",
+      "affiliation": "Jomo Kenyatta University of Agriculture and Technology"
+    },
+    {
+      "name": "Gateri, Judy Muthoni",
+      "affiliation": "Jomo Kenyatta University of Agriculture and Technology"
+    },
+    {
+      "name": "Opondo, Philemon Onyango",
+      "affiliation": "Jomo Kenyatta University of Agriculture and Technology"
+    }
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "keywords": [
+    "chest radiography",
+    "pneumonia",
+    "geriatrics",
+    "deep learning",
+    "DenseNet-121",
+    "attention",
+    "ablation study",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23590668",
+      "relation": "isSupplementedBy",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "10.5281/zenodo.23598061",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    }
+  ]
+}
