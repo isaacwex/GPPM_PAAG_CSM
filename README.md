@@ -68,7 +68,7 @@ Open `notebooks/GPPM_PAAG_CSM_v10_Protocol2.ipynb` on a CUDA machine (we used an
 See `CITATION.cff`.
 
 - Weights and label-free predictions (Protocol 2): https://doi.org/10.5281/zenodo.23590668
-- Code and results, release v2.0.0 (archived by Zenodo): https://doi.org/10.5281/zenodo.23603593
+- Code and results, release v2.1.0 (archived by Zenodo): https://doi.org/10.5281/zenodo.23616103
 - Weights of the exploratory Protocol 1 study (5 seeds): https://doi.org/10.5281/zenodo.23598061
 
 ## Licence
