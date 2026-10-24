@@ -29,6 +29,7 @@ All module-versus-Base differences lie within ±0.01 AUC (equivalence tests in t
 | `results/external_padchest/` | PadChest per-run results, contrasts and secondary analyses. |
 | `results/protocol1_five_seeds/` | Summary results of the exploratory Protocol 1 study (4 variants × 5 seeds) quoted in the Introduction and Discussion: per-seed metrics, cross-seed synthesis, DeLong/McNemar tests, source- and view-stratified results, localisation IoU means. Per-image files and plots are omitted. |
 | `results/label_reattachment_check.csv` | For every run, confirmation that labels rebuilt from `cohort/split_assignment.csv` equal the labels used in training. |
+| `results/followup_supervised_csm/` | Exploratory follow-up after the confirmatory analysis (Table S8): run records of the two supervised-suppressor pilots (seed 42, validation only, lambda 1 and 5), notebook cell P11, and `analysis/csm_ceiling.py`, the ceiling of any correction from the comorbidity outputs. |
 | `results/manuscript_numbers/` | Every table-level output of `analysis/` (`numbers.json`, bootstrap, DeLong, McNemar, training dynamics …). |
 | `analysis/` | `analysis.py` (internal), `ext_analysis.py` (PadChest), `figures.py`, `paths.py` (input locations and label re-attachment). |
 | `figures/` | Figures 1–6 and S1–S3 as submitted. |
